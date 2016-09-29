@@ -19,7 +19,7 @@
     <div class="container spark-screen">
         <section class="content">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-sm-5">
                     <div class="box box-solid">
                         <div class="box-header with-border">
                             <h4 class="box-title">Draggable Events</h4>
@@ -38,6 +38,8 @@
                         <!-- /.box-body -->
                     </div>
                     <!-- /. box -->
+                </div>
+                <div class="col-sm-5">
                     <div class="box box-solid">
                         <div class="box-header with-border">
                             <h3 class="box-title">Crear un juego</h3>
@@ -73,8 +75,12 @@
                         </div>
                     </div>
                 </div>
+
+
                 <!-- /.col -->
-                <div class="col-md-9">
+             </div>
+            <div class="row">
+                <div class="col-sm-10">
                     <div class="box box-primary">
                         <div class="box-body no-padding">
                             <!-- THE CALENDAR -->
@@ -142,9 +148,9 @@
                 },
                 buttonText: {
                     today: 'hoy',
-                    month: 'month',
-                    week: 'week',
-                    day: 'day'
+                    month: 'mes',
+                    week: 'semana',
+                    day: 'día'
                 },
                 //Random default events
                 events: [
