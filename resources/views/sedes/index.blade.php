@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    Equipos
+    Ligas
 @endsection
 
 @section('contentheader_title')
-    Mis Equipos
+    Mis Ligas
 @endsection
 
 @section('otro-header')
@@ -22,10 +22,9 @@
                     <!-- Apply any bg-* class to to the icon to color it -->
                     <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Equipos registrados</span>
+                        <span class="info-box-text">Ligas registradas</span>
                         <span class="info-box-number">3</span>
-                        {{--TODO: Pasar el número de equipos registrados --}}
-                        <span class="info-box-number"><a href="/equipos/create">Registrar nuevo</a></span>
+                        <span class="info-box-number"><a href="/ligas/create">Registrar nueva</a></span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div>
@@ -38,18 +37,18 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Entrenador</th>
-                        <th>Asistente</th>
-                        <th>Email</th>
+                        <th>Inicio</th>
+                        <th>Fin</th>
+                        <th class="description-text">Descripción</th>
                         <th width="15%">&nbsp</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><a href="/equipos/show/">Club Regatas de Santa Fe</a></td>
-                        <td>Luke Cage</td>
-                        <td>Jessica Jones</td>
-                        <td>regatas@mail.com</td>
+                        <td><a href="#">FEWABA Sub - 12</a></td>
+                        <td>31-01-2016</td>
+                        <td>13-04-2016</td>
+                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
                         <td class="pull-right">
                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
                             {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
@@ -57,10 +56,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="/equipos/show/">Club Atlético Independiente de Avellaneda</a></td>
-                        <td>Danny Rand</td>
-                        <td>Matt Murdock</td>
-                        <td>hellsKitchen@mail.com</td>
+                        <td><a href="#">FEWABA Campeonato Nacional Sub 18</a></td>
+                        <td>05-02-2016</td>
+                        <td>18-06-2016</td>
+                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
                         <td class="pull-right">
                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
                             {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
@@ -68,10 +67,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="/equipos/show/">Imperio</a></td>
-                        <td>Wilson Fisk</td>
-                        <td>Elektra Natchios</td>
-                        <td>money@mail.com</td>
+                        <td><a href="#">FEWABA liga Metropolitana Categoría B</a></td>
+                        <td>31-12-2015</td>
+                        <td>13-02-2016</td>
+                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
                         <td class="pull-right">
                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
                             {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
@@ -93,7 +92,7 @@
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Estás seguro de borrar a <b>este club</b>?</p>
+                    <p>Estás seguro de borrar a <b>Luke Cage</b>?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

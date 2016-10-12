@@ -39,21 +39,35 @@
                 <a href="#"><i class='fa fa-bullseye'></i> <span>Equipos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="/equipos/">Ver todos</a></li>
-                    <li><a href="/equipos/agregar">Agregar nuevo</a></li>
+                    <li><a href="/equipos/create">Crear nuevo</a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-trophy'></i> <span>Ligas</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="/ligas/">Ver todas</a></li>
-                    <li><a href="/ligas/agregar">Agregar nueva</a></li>
+                    <li><a href="/ligas/create">Crear nueva</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-futbol-o'></i> <span>Juegos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/juegos/">Ver todos</a></li>
+                    <li><a href="/juegos/create">Crear nuevo</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-map-marker'></i> <span>Sedes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/sedes/">Ver todas</a></li>
+                    <li><a href="/sedes/create">Crear nueva</a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-user'></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="/usuarios/">Ver todos</a></li>
-                    <li><a href="/usuarios/agregar">Agregar nuevo</a></li>
+                    <li><a href="/usuarios/create">Crear nuevo</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

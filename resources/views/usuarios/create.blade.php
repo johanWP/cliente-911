@@ -19,3 +19,16 @@
     </div>
 
 @endsection
+
+@section('otros-scripts')
+    <script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.pop').popover();
+            $('#divLigas').slimScroll({
+                height: '8em'
+            });
+        });
+
+    </script>
+@endsection
