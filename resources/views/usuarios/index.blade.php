@@ -39,37 +39,41 @@
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Teléfono</th>
+                        <th>Perfil</th>
                         <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Luke Cage</td>
+                        <td><a href="/usuarios/ver">Luke Cage</a></td>
                         <td>luke@avengers.com</td>
                         <td>15 - 1234 5678</td>
+                        <td>Entrenador</td>
                         <td class="pull-right">
                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar usuario"><i class="fa fa-2x fa-edit"></i></button>
-                            <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>
+                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
                             <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
-                        <td>Luke Cage</td>
-                        <td>luke@avengers.com</td>
+                        <td><a href="/usuarios/ver">Danny Rand</a></td>
+                        <td>ironfist@avengers.com</td>
                         <td>15 - 1234 5678</td>
+                        <td>Árbitro</td>
                         <td class="pull-right">
                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar usuario"><i class="fa fa-2x fa-edit"></i></button>
-                            <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>
+                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
                             <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
-                        <td>Luke Cage</td>
-                        <td>luke@avengers.com</td>
+                        <td><a href="/usuarios/ver">Jessica Jones</a></td>
+                        <td>jessica@avengers.com</td>
                         <td>15 - 1234 5678</td>
+                        <td>Administrador de liga</td>
                         <td class="pull-right">
                             <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar usuario"><i class="fa fa-2x fa-edit"></i></button>
-                            <button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>
+                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
                             <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
                         </td>
                     </tr>

@@ -28,6 +28,9 @@ Route::get('/equipos/show', function () {
 Route::get('/juegos/', function () {
     return view('juegos.index');
 });
+Route::get('/juegos/create', function () {
+    return view('juegos.create');
+});
 Route::get('/sedes/', function (){
     return view('sedes.index');
 });

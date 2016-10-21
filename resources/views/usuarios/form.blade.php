@@ -91,7 +91,7 @@
             </div><div class="checkbox">
                 <label>
                     <input type="checkbox" value="">
-                    Liga sub 18
+                    FEWABA Campeonato Nacional Sub 18
                 </label>
             </div><div class="checkbox">
                 <label>
@@ -106,7 +106,7 @@
             </div><div class="checkbox">
                 <label>
                     <input type="checkbox" value="">
-                    Metropolitana B
+                    FEWABA liga Metropolitana Categoría B
                 </label>
             </div><div class="checkbox">
                 <label>

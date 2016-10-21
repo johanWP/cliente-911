@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    Equipos
+    Juegos
 @endsection
 
 @section('contentheader_title')
-    Mis Equipos
+    Mis Juegos
 @endsection
 
 @section('otro-header')
@@ -20,12 +20,11 @@
             <div class="col-sm-3">
                 <div class="info-box">
                     <!-- Apply any bg-* class to to the icon to color it -->
-                    <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
+                    <span class="info-box-icon bg-green"><i class="fa fa-futbol-o"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Equipos registrados</span>
+                        <span class="info-box-text">Juegos registrados</span>
                         <span class="info-box-number">3</span>
-                        {{--TODO: Pasar el número de equipos registrados --}}
-                        <span class="info-box-number"><a href="/equipos/create">Registrar nuevo</a></span>
+                        <span class="info-box-number"><a href="/ligas/create">Registrar nuevo</a></span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div>
@@ -37,45 +36,34 @@
                 <table class="table table-striped table-hover" id="datatable">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Entrenador</th>
-                        <th>Asistente</th>
-                        <th>Email</th>
+                        <th>Local Vs. Visitante</th>
+                        <th>Fecha</th>
+                        <th>Sede</th>
+                        <th>Resultado</th>
                         <th width="15%">&nbsp</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><a href="/equipos/show/">Club Regatas de Santa Fe</a></td>
-                        <td>Luke Cage</td>
-                        <td>Jessica Jones</td>
-                        <td>regatas@mail.com</td>
+                        <td><a href="#">Club Atlético Independiente de Avellaneda Vs. River Plate</a></td>
+                        <td><p>31-01-2016</p></td>
+                        <td><p>Natatorio River Plate</p></td>
+                        <td><p>12 - 8</p></td>
                         <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
+                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar juego"><i class="fa fa-2x fa-edit"></i></button>
                             {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
+                            <button class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Eliminar juego"><i class="fa fa-2x fa-trash"></i></button>
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="/equipos/show/">Club Atlético Independiente de Avellaneda</a></td>
-                        <td>Danny Rand</td>
-                        <td>Matt Murdock</td>
-                        <td>hellsKitchen@mail.com</td>
+                        <td><a href="#">Asociación Atlética Argentinos Junior Vs. Club Atlétco Independiente de Avellaneda</a></td>
+                        <td><p>31-03-2016</p></td>
+                        <td><p>Sede Semillero AAAJ</p></td>
+                        <td><p>7 - 10</p></td>
                         <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
+                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar juego"><i class="fa fa-2x fa-edit"></i></button>
                             {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="/equipos/show/">Imperio</a></td>
-                        <td>Wilson Fisk</td>
-                        <td>Elektra Natchios</td>
-                        <td>money@mail.com</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
+                            <button class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Eliminar juego"><i class="fa fa-2x fa-trash"></i></button>
                         </td>
                     </tr>
                     </tbody>
@@ -85,23 +73,6 @@
         </div>
     </div>
 
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Estás seguro de borrar a <b>este club</b>?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('otros-scripts')
