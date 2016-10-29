@@ -10,12 +10,10 @@
 
 @section('otro-header')
 
-    <link href="{{ asset('/plugins/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/plugins/datatables/jquery.dataTables_themeroller.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('main-content')
-    <div class="container spark-screen">
+    <div class="container spark-screen" id="container">
         <div class="row">
             <div class="col-sm-3">
                 <div class="info-box">
@@ -29,81 +27,129 @@
                 </div><!-- /.info-box -->
             </div>
         </div>
+        <!-- /.row -->
+
         <div class="row">
-            <div class="col-sm-11">
-            <div class="table-responsive">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    {{--<h3 class="box-title">Browser Usage</h3>--}}
+                    {{--<div class="btn-group">--}}
+                        {{--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                            {{--Seleccionar <span class="caret"></span>--}}
+                        {{--</button>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="#">Todos</a></li>--}}
+                            {{--<li><a href="#">Ninguno</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                    <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
+                    {{--<div class="box-tools pull-right">--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
+                        {{--</button>--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
+                    {{--</div>--}}
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
 
-                <table class="table table-striped table-hover" id="datatable">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Perfil</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><a href="/usuarios/ver">Luke Cage</a></td>
-                        <td>luke@avengers.com</td>
-                        <td>15 - 1234 5678</td>
-                        <td>Entrenador</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar usuario"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="/usuarios/ver">Danny Rand</a></td>
-                        <td>ironfist@avengers.com</td>
-                        <td>15 - 1234 5678</td>
-                        <td>Árbitro</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar usuario"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="/usuarios/ver">Jessica Jones</a></td>
-                        <td>jessica@avengers.com</td>
-                        <td>15 - 1234 5678</td>
-                        <td>Administrador de liga</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar usuario"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                                <table class="table table-hover" id="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAll" name="selectAll" value="all"></th>
+                                        <th>Nombre</th>
+                                        <th>Dirección</th>
+                                        <th>Teléfono</th>
+                                        <th>Email</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="1" name="1"></td>
+                                        <td><a href="/equipos/show/">Club Regatas de Santa Fe</a></td>
+                                        <td>Dorrego 1640, CABA</td>
+                                        <td>15 - 4545 6767</td>
+                                        <td>regatas@mail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="2" name="2"></td>
+                                        <td><a href="/equipos/show/">Club Atlético Independiente de Avellaneda</a></td>
+                                        <td>Av. Bernabé Marquez 504, San Isidro, Buenos Aires</td>
+                                        <td>11 - 1234 5678</td>
+                                        <td>hellsKitchen@mail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="3" name="3"></td>
+                                        <td><a href="/equipos/show/">Asociación Atlética Argentinos Junior</a></td>
+                                        <td>Tronador 41, Ciudad de Buenos Aires, Buenos Aires</td>
+                                        <td>15 - 9078 5634</td>
+                                        <td>money@mail.com</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> {{--  fin del col-sm-12 --}}
+                    </div> {{--fin del row--}}
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
+
+                                <table class="table table-hover" id="datatable" name="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAll" name="selectAll" value="all"></th>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th>Perfil</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="1" name="1"></td>
+                                        <td><a href="/equipos/show/">Danny Rand</a></td>
+                                        <td><p>danny_rand@ironfist.com</p></td>
+                                        <td><p>11 - 6677 8899</p></td>
+                                        <td><p>Entrenador</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="2" name="2"></td>
+                                        <td><a href="/equipos/show/">Danny Rand</a></td>
+                                        <td><p>danny_rand@ironfist.com</p></td>
+                                        <td><p>11 - 6677 8899</p></td>
+                                        <td><p>Entrenador</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="3" name="3"></td>
+                                        <td><a href="/equipos/show/">Danny Rand</a></td>
+                                        <td><p>danny_rand@ironfist.com</p></td>
+                                        <td><p>11 - 6677 8899</p></td>
+                                        <td><p>Entrenador</p></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> {{--  fin del col-sm-12 --}}
+                    </div> {{--fin del row--}}
+
+                </div>
+
+                <!-- /.row -->
             </div>
-            </div>
+            <!-- /.box-body -->
         </div>
+        <!-- /.row -->
     </div>
 
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Estás seguro de borrar a <b>Luke Cage</b>?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
 
 @section('otros-scripts')
+    {{--<script src="{{ asset('/js/vue.js') }}" type="text/javascript"></script>--}}
+    {{--<script src="{{ asset('/js/main.js') }}" type="text/javascript"></script>--}}
     <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
     <script>
         $(document).ready(function() {

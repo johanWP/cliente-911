@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    Ligas
+    Sedes
 @endsection
 
 @section('contentheader_title')
-    Mis Ligas
+    Sedes
 @endsection
 
 @section('otro-header')
@@ -19,88 +19,87 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="info-box">
-                    <!-- Apply any bg-* class to to the icon to color it -->
-                    <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
+                    {{--Apply any bg-* class to to the icon to color it --}}
+                    <span class="info-box-icon bg-green"><i class="fa fa-map-marker"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Ligas registradas</span>
+                        <span class="info-box-text">Sedes registradas</span>
                         <span class="info-box-number">3</span>
                         <span class="info-box-number"><a href="/ligas/create">Registrar nueva</a></span>
-                    </div><!-- /.info-box-content -->
-                </div><!-- /.info-box -->
+                    </div> {{--fin del /.info-box-content--}}
+                </div> {{--fin del info-box--}}
             </div>
         </div>
+        {{--fin del row--}}
         <div class="row">
-            <div class="col-sm-11">
-            <div class="table-responsive">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    {{--<h3 class="box-title">Browser Usage</h3>--}}
+                    {{--<div class="btn-group">--}}
+                        {{--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                            {{--Seleccionar <span class="caret"></span>--}}
+                        {{--</button>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="#">Todos</a></li>--}}
+                            {{--<li><a href="#">Ninguno</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                    <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
+                    {{--<div class="box-tools pull-right">--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
+                        {{--</button>--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
+                    {{--</div>--}}
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
 
-                <table class="table table-striped table-hover" id="datatable">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Inicio</th>
-                        <th>Fin</th>
-                        <th class="description-text">Descripción</th>
-                        <th width="15%">&nbsp</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><a href="#">FEWABA Sub - 12</a></td>
-                        <td>31-01-2016</td>
-                        <td>13-04-2016</td>
-                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">FEWABA Campeonato Nacional Sub 18</a></td>
-                        <td>05-02-2016</td>
-                        <td>18-06-2016</td>
-                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">FEWABA liga Metropolitana Categoría B</a></td>
-                        <td>31-12-2015</td>
-                        <td>13-02-2016</td>
-                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
-    </div>
+                                <table class="table table-hover" id="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAll" name="selectAll" value="all"></th>
+                                        <th>Nombre</th>
+                                        <th>Dirección</th>
+                                        <th>Teléfono</th>
+                                        <th>Email</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="1" name="1"></td>
+                                        <td><a href="/equipos/show/">Club Regatas de Santa Fe</a></td>
+                                        <td>Dorrego 1640, CABA</td>
+                                        <td>15 - 4545 6767</td>
+                                        <td>regatas@mail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="2" name="2"></td>
+                                        <td><a href="/equipos/show/">Club Atlético Independiente de Avellaneda</a></td>
+                                        <td>Av. Bernabé Marquez 504, San Isidro, Buenos Aires</td>
+                                        <td>11 - 1234 5678</td>
+                                        <td>hellsKitchen@mail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="3" name="3"></td>
+                                        <td><a href="/equipos/show/">Asociación Atlética Argentinos Junior</a></td>
+                                        <td>Tronador 41, Ciudad de Buenos Aires, Buenos Aires</td>
+                                        <td>15 - 9078 5634</td>
+                                        <td>money@mail.com</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> {{--  fin del col-sm-12 --}}
+                    </div> {{--fin del row--}}
+                </div>  {{-- fin del box-body --}}
+            </div>  {{--fin del box--}}
+        </div> {{-- fin del row--}}
 
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Estás seguro de borrar a <b>Luke Cage</b>?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> {{--fin del container--}}
+
+
 @endsection
 
 @section('otros-scripts')

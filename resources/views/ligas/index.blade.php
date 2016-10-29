@@ -30,84 +30,70 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-11">
-            <div class="table-responsive">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    {{--<h3 class="box-title">Browser Usage</h3>--}}
+                    <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
+                    {{--<div class="box-tools pull-right">--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
+                        {{--</button>--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
+                    {{--</div>--}}
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
 
-                <table class="table table-striped table-hover" id="datatable">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Inicio</th>
-                        <th>Fin</th>
-                        <th class="description-text">Descripción</th>
-                        <th width="15%">&nbsp</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><a href="#">FEWABA Sub - 12</a></td>
-                        <td>31-01-2016</td>
-                        <td>13-04-2016</td>
-                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">FEWABA Campeonato Nacional Sub 18</a></td>
-                        <td>05-02-2016</td>
-                        <td>18-06-2016</td>
-                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">FEWABA liga Metropolitana Categoría B</a></td>
-                        <td>31-12-2015</td>
-                        <td>13-02-2016</td>
-                        <td style="word-wrap:break-word;">Este es el campeonato extendido para niños y niñas nacidos hasta el 31 de diciembre del año 2003</td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar liga"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
-    </div>
+                                <table class="table table-hover" id="datatable">
 
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Estás seguro de borrar a <b>Luke Cage</b>?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAll" name="selectAll" value="all"></th>
+                                        <th>Nombre</th>
+                                        <th>Inicio</th>
+                                        <th>Fin</th>
+                                        <th class="description-text">Descripción</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="1" name="1"></td>
+                                        <td><a href="/equipos/show/">Campeonato Nacional Sub 14</a></td>
+                                        <td>31-10-2016</td>
+                                        <td>04-11-2016</td>
+                                        <td>regatas@mail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="2" name="2"></td>
+                                        <td><a href="/equipos/show/">Liga Larense de Polo Acuático</a></td>
+                                        <td>13-02-2015</td>
+                                        <td>13-03-2015</td>
+                                        <td>hellsKitchen@mail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="3" name="3"></td>
+                                        <td><a href="/equipos/show/">II Encuentro regional de equipos hispanos</a></td>
+                                        <td>22-01-2011</td>
+                                        <td>28-06-2014</td>
+                                        <td>money@mail.com</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> {{--  fin del col-sm-12 --}}
+                    </div> {{--fin del row--}}
+                </div>  {{-- fin del box-body --}}
+            </div>  {{--fin del box--}}
+        </div> {{-- fin del row--}}
 @endsection
 
-@section('otros-scripts')
-    <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
-    <script>
-        $(document).ready(function() {
-            $('#datatable').DataTable();
-        }); // fin del document.ready
-    </script>
+        @section('otros-scripts')
+            <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#datatable').DataTable();
+                }); // fin del document.ready
+            </script>
 @endsection

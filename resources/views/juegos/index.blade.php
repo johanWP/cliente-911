@@ -29,48 +29,72 @@
                 </div><!-- /.info-box -->
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-11">
-            <div class="table-responsive">
 
-                <table class="table table-striped table-hover" id="datatable">
-                    <thead>
-                    <tr>
-                        <th>Local Vs. Visitante</th>
-                        <th>Fecha</th>
-                        <th>Sede</th>
-                        <th>Resultado</th>
-                        <th width="15%">&nbsp</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><a href="#">Club Atlético Independiente de Avellaneda Vs. River Plate</a></td>
-                        <td><p>31-01-2016</p></td>
-                        <td><p>Natatorio River Plate</p></td>
-                        <td><p>12 - 8</p></td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar juego"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Eliminar juego"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Asociación Atlética Argentinos Junior Vs. Club Atlétco Independiente de Avellaneda</a></td>
-                        <td><p>31-03-2016</p></td>
-                        <td><p>Sede Semillero AAAJ</p></td>
-                        <td><p>7 - 10</p></td>
-                        <td class="pull-right">
-                            <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar juego"><i class="fa fa-2x fa-edit"></i></button>
-                            {{--<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Ver detalle"><i class="fa fa-2x fa-eye"></i></button>--}}
-                            <button class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Eliminar juego"><i class="fa fa-2x fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
+        <div class="row">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    {{--<h3 class="box-title">Browser Usage</h3>--}}
+                    {{--<div class="btn-group">--}}
+                        {{--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                            {{--Seleccionar <span class="caret"></span>--}}
+                        {{--</button>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="#">Todos</a></li>--}}
+                            {{--<li><a href="#">Ninguno</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                    <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
+                    {{--<div class="box-tools pull-right">--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
+                        {{--</button>--}}
+                        {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
+                    {{--</div>--}}
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
+
+                                <table class="table table-hover" id="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAll" name="selectAll" value="all"></th>
+                                        <th>Local</th>
+                                        <th>Visitante</th>
+                                        <th>Fecha</th>
+                                        <th>Sede</th>
+                                        <th>Resultado</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="1" name="1"></td>
+                                        <td><a href="#">Club Atlético Independiente de Avellaneda</a></td>
+                                        <td><a href="#">River Plate</a></td>
+                                        <td><p>31-01-2016</p></td>
+                                        <td><p>Natatorio River Plate</p></td>
+                                        <td><p>12 - 8</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="1" name="1"></td>
+                                        <td><a href="#">Asociación Atlética Argentinos Junior</a></td>
+                                        <td><a href="#">Gimnasia y Esgrima de Buenos Aires</a></td>
+                                        <td><p>31-03-2016</p></td>
+                                        <td><p>Sede Semillero AAAJ</p></td>
+                                        <td><p>7 - 10</p></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> {{--  fin del col-sm-12 --}}
+                    </div> {{--fin del row--}}
+                </div>  {{-- fin del box-body --}}
+            </div>  {{--fin del box--}}
+        </div> {{-- fin del row--}}
+
+        {{-- fin de la tabla--}}
     </div>
 
 @endsection
