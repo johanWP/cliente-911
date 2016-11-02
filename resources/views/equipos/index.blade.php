@@ -23,8 +23,7 @@
                     <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Equipos registrados</span>
-                        <span class="info-box-number">3</span>
-                        {{--TODO: Pasar el número de equipos registrados --}}
+                        <span class="info-box-number" id="spanTotal"></span>
                         <span class="info-box-number"><a href="/equipos/create">Registrar nuevo</a></span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
@@ -33,17 +32,13 @@
         <div class="row">
             <div class="box box-default">
                 <div class="box-header with-border">
-                    {{--<h3 class="box-title">Browser Usage</h3>--}}
-                    <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
-                    {{--<div class="box-tools pull-right">--}}
-                        {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
-                        {{--</button>--}}
-                        {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
-                    {{--</div>--}}
+                    <button class="btn btn-default" id="btnEliminar"><i class="fa fa-trash"></i> Eliminar</button>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="row">
+                <div class="box-body" id="divBoxBody">
+                    <div class="text-center" id="divSpinner"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                        <span class="sr-only">Loading...</span></div>
+                    <div class="row" id="divTable">
                         <div class="col-sm-12">
                             <div class="table-responsive">
 
@@ -58,27 +53,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" id="1" name="1"></td>
-                                        <td><a href="/equipos/show/">Club Regatas de Santa Fe</a></td>
-                                        <td>Luke Cage</td>
-                                        <td>Jessica Jones</td>
-                                        <td>regatas@mail.com</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" id="2" name="2"></td>
-                                        <td><a href="/equipos/show/">Club Atlético Independiente de Avellaneda</a></td>
-                                        <td>Danny Rand</td>
-                                        <td>Matt Murdock</td>
-                                        <td>hellsKitchen@mail.com</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" id="3" name="3"></td>
-                                        <td><a href="/equipos/show/">Imperio</a></td>
-                                        <td>Wilson Fisk</td>
-                                        <td>Elektra Natchios</td>
-                                        <td>money@mail.com</td>
-                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -87,6 +62,7 @@
                 </div>  {{-- fin del box-body --}}
             </div>  {{--fin del box--}}
         </div> {{-- fin del row--}}
+
     </div>
 
 @endsection
@@ -95,7 +71,43 @@
     <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
     <script>
         $(document).ready(function() {
-            $('#datatable').DataTable();
+            $('#btnEliminar').hide();
+            $('#divTable').hide();
+            var jqxhr = $.ajax( "/api/getEquipos/" )
+                    .done(function(msg) {
+                        var totalEquipos =0;
+                        $.each(msg, function(k, fila) {
+                            totalEquipos++;
+                            nuevoTr = '<tr> <td><input type="checkbox" id="'+fila.id+'" name="'+fila.id+'" value="0"></td>' +
+                                    '<td>' + fila.nombre +'</td>' +
+                                    '<td>' + fila.entrenador + '</td>' +
+                                    '<td>' + fila.asistente + '</td>' +
+                                    '<td>' + fila.email + '</td>' +
+                                    '</tr>';
+                            $("#datatable tbody").append(nuevoTr);
+                        });
+                        $('#datatable').DataTable();
+                        $('#spanTotal').html(totalEquipos);
+                        $('#btnEliminar').fadeIn();
+                        $('#divTable').fadeIn();
+                        $('#divSpinner').fadeOut();
+                    })
+                    .fail(function() {
+//                        alert( "error" );
+                    })
+                    .always(function() {
+//                        alert( "complete" );
+                    });
+
+
+            $('#selectAll').click(function(e){
+                var table= $(e.target).closest('table');
+                $('td input:checkbox',table).prop('checked',this.checked);
+            });
+
+
+//            $("#tblEntAttributes tbody").append(newRowContent);
+
         }); // fin del document.ready
     </script>
 @endsection
