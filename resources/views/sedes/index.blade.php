@@ -33,22 +33,7 @@
         <div class="row">
             <div class="box box-default">
                 <div class="box-header with-border">
-                    {{--<h3 class="box-title">Browser Usage</h3>--}}
-                    {{--<div class="btn-group">--}}
-                        {{--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                            {{--Seleccionar <span class="caret"></span>--}}
-                        {{--</button>--}}
-                        {{--<ul class="dropdown-menu">--}}
-                            {{--<li><a href="#">Todos</a></li>--}}
-                            {{--<li><a href="#">Ninguno</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
                     <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
-                    {{--<div class="box-tools pull-right">--}}
-                        {{--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>--}}
-                        {{--</button>--}}
-                        {{--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>--}}
-                    {{--</div>--}}
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -107,6 +92,11 @@
     <script>
         $(document).ready(function() {
             $('#datatable').DataTable();
+            $('#selectAll').click(function(e){
+                var table= $(e.target).closest('table');
+                $('td input:checkbox',table).prop('checked',this.checked);
+            });
+
         }); // fin del document.ready
     </script>
 @endsection

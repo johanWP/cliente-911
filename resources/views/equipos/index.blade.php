@@ -37,7 +37,8 @@
                 <!-- /.box-header -->
                 <div class="box-body" id="divBoxBody">
                     <div class="text-center" id="divSpinner"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
-                        <span class="sr-only">Loading...</span></div>
+                        <span class="sr-only">Loading...</span>
+                    </div>
                     <div class="row" id="divTable">
                         <div class="col-sm-12">
                             <div class="table-responsive">
@@ -64,7 +65,6 @@
         </div> {{-- fin del row--}}
 
     </div>
-
 @endsection
 
 @section('otros-scripts')
@@ -86,7 +86,25 @@
                                     '</tr>';
                             $("#datatable tbody").append(nuevoTr);
                         });
-                        $('#datatable').DataTable();
+                        $('#datatable').DataTable({
+                            "paging": true,
+                            "lengthChange": false,
+                            "searching": true,
+                            "ordering": true,
+                            "info": true,
+                            "autoWidth": false,
+                            "language": {
+                                processing: "Espera...",
+                                search: "Buscar&nbsp;:",
+                                info:   "Mostrando registros _START_ a _END_ de _TOTAL_ en total",
+                                paginate: {
+                                    first: "Primero",
+                                    previous: "Anterior",
+                                    next: "Siguiente",
+                                    last: "Ultimo"
+                                }
+                            }
+                        });
                         $('#spanTotal').html(totalEquipos);
                         $('#btnEliminar').fadeIn();
                         $('#divTable').fadeIn();

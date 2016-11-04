@@ -35,8 +35,11 @@
                     <button class="btn btn-default"><i class="fa fa-trash"></i> Eliminar</button>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="row">
+                <div class="box-body" id="divBoxBody">
+                    <div class="text-center" id="divSpinner"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <div class="row" id="divTable">
                         <div class="col-sm-12">
                             <div class="table-responsive">
 
@@ -84,11 +87,44 @@
     </div>
 @endsection
 
-        @section('otros-scripts')
-            <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
-            <script>
-                $(document).ready(function() {
-                    $('#datatable').DataTable();
-                }); // fin del document.ready
-            </script>
+@section('otros-scripts')
+<script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+//        $('#btnEliminar').hide();
+//        $('#divTable').hide();
+//        var jqxhr = $.ajax( "/api/getEquipos/" )
+//                .done(function(msg) {
+//                    var totalEquipos =0;
+//                    $.each(msg, function(k, fila) {
+//                        totalEquipos++;
+//                        nuevoTr = '<tr> <td><input type="checkbox" id="'+fila.id+'" name="'+fila.id+'" value="0"></td>' +
+//                                '<td>' + fila.nombre +'</td>' +
+//                                '<td>' + fila.entrenador + '</td>' +
+//                                '<td>' + fila.asistente + '</td>' +
+//                                '<td>' + fila.email + '</td>' +
+//                                '</tr>';
+//                        $("#datatable tbody").append(nuevoTr);
+//                    });
+//                    $('#datatable').DataTable();
+//                    $('#spanTotal').html(totalEquipos);
+//                    $('#btnEliminar').fadeIn();
+//                    $('#divTable').fadeIn();
+//                    $('#divSpinner').fadeOut();
+//                })
+//                .fail(function() {
+////                        alert( "error" );
+//                })
+//                .always(function() {
+////                        alert( "complete" );
+//                });
+//
+
+        $('#selectAll').click(function(e){
+            var table= $(e.target).closest('table');
+            $('td input:checkbox',table).prop('checked',this.checked);
+        });
+
+    }); // fin del document.ready
+</script>
 @endsection

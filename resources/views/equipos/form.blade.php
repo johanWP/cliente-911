@@ -1,29 +1,63 @@
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="form-group">
             {{ Form::label('nombre', 'Nombre:') }}
             {{ Form::text('nombre', '', ['class'=> 'form-control', 'placeholder'=> '(Requerido)']) }}
         </div>
 
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="form-group">
             {{ Form::label('email', 'Email:') }}
             {{ Form::text('email', '', ['class'=> 'form-control', 'placeholder'=> '(Opcional)']) }}
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="form-group">
-            {{ Form::label('entrenador_id', 'Entrenador:') }}
-            {{ Form::select('entrenador_id', ['Luke' => 'Luke Cage', 'Jessica Jones' => 'Jessica Jones'], null, ['class' => 'form-control','placeholder' => 'Selecciona...']) }}
+            {{ Form::label('logo', 'Logo:') }}
+            {{ Form::file('logo', ['class'=> 'form-control']) }}
         </div>
     </div>
-    <div class="col-sm-6">
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-4">
         <div class="form-group">
-            {{ Form::label('asistente_id', 'Asistente:') }}
-            {{ Form::select('asistente_id', ['L' => 'Luke Cage', 'S' => 'Matt Murdock'], null, ['class' => 'form-control','placeholder' => 'Selecciona...']) }}
+            {{ Form::label('entrenador_nombre', 'Entrenador:') }}
+            {{ Form::text('entrenador_nombre', null, ['class' => 'form-control','placeholder' => 'Nombre y Apellido']) }}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ Form::label('entrenador_tlf', 'Teléfono:') }}
+            {{ Form::text('entrenador_tlf', null, ['class' => 'form-control','placeholder' => 'Prefiera número celular']) }}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ Form::label('entrenador_email', 'Email:') }}
+            {{ Form::text('entrenador_email', null, ['class' => 'form-control','placeholder' => 'Escriba una dirección válida']) }}
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ Form::label('asistente_nombre', 'Asistente:') }}
+            {{ Form::text('asistente_nombre', null, ['class' => 'form-control','placeholder' => 'Nombre y Apellido']) }}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ Form::label('asistente_tlf', 'Teléfono:') }}
+            {{ Form::text('asistente_tlf', null, ['class' => 'form-control','placeholder' => 'Prefiera número celular']) }}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ Form::label('asistente_email', 'Email:') }}
+            {{ Form::text('asistente_email', null, ['class' => 'form-control','placeholder' => 'Escriba una dirección válida']) }}
         </div>
     </div>
 </div>
