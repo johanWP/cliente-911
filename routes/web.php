@@ -45,3 +45,4 @@ Route::get('/sedes/create', function (){
 
 //
 Route::get('/api/getEquipos/', 'TeamController@index');
+Route::get('/api/get_datos_contacto/{user_id}', 'TeamController@datos_contacto');

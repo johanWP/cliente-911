@@ -36,9 +36,27 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function datos_contacto($user_id)
     {
-        //
+        $data = [
+            'entrenador' => ['nombre' => 'Danny Rand', 'email' => 'ironfist@marvel.com', 'telefono' => '11 12341234'],
+            'asistente' => ['nombre' => 'Luke Cage', 'email' => 'powerman@marvel.com', 'telefono' => '11 43214321'],
+            'direccion' => 'Beverly Hills 90210',
+            'ligas' => ['Liga Metro A', 'Liga Metro B'],
+            'notas' => 'My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.'
+        ];
+//        return $data;
+        if( $user_id == 1 )
+        {
+            $data = ['nombre' => 'Danny Rand', 'email' => 'ironfist@marvel.com', 'telefono' => '11 12341234'];
+        } elseif ( $user_id == 2)
+        {
+            $data = ['nombre' => 'Luke Cage', 'email' => 'powerman@marvel.com', 'telefono' => '11 43214321'];
+        } else
+        {
+            return response('NotFound', 404);
+        }
+        return $data;
     }
 
     /**
